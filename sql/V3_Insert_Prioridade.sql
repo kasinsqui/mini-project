@@ -1,0 +1,1 @@
+insert into prioridade values(default,'baixa'),(default,'média'),(default,'alta')

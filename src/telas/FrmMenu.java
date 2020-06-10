@@ -42,6 +42,8 @@ public class FrmMenu extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,6 +79,18 @@ public class FrmMenu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jMenu3.setText("Chamadas");
+
+        jMenuItem3.setText("Chamada");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu3);
+
         jMenu2.setText("Edit");
         jMenuBar1.add(jMenu2);
 
@@ -97,17 +111,52 @@ public class FrmMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
+        
         IfrUsuario tela = new IfrUsuario(usuario);
-        jDesktopPane1.add(tela);
+        
+         jDesktopPane1.add(tela);
+        
+        int lDesk = jDesktopPane1.getWidth();
+        int aDesk = jDesktopPane1.getHeight();
+        int lIFrame = tela.getWidth();
+        int aIFrame = tela.getHeight();
+
+        tela.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
+        
         tela.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-       IfrProduto tela = new IfrProduto();
-        jDesktopPane1.add(tela);
+        
+        IfrProduto tela = new IfrProduto();
+        
+         jDesktopPane1.add(tela);
+        
+        int lDesk = jDesktopPane1.getWidth();
+        int aDesk = jDesktopPane1.getHeight();
+        int lIFrame = tela.getWidth();
+        int aIFrame = tela.getHeight();
+
+        tela.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
+        
         tela.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        
+        IfrChamadas ifrChamadas = new IfrChamadas();
+        
+        jDesktopPane1.add(ifrChamadas);
+        
+        int lDesk = jDesktopPane1.getWidth();
+        int aDesk = jDesktopPane1.getHeight();
+        int lIFrame = ifrChamadas.getWidth();
+        int aIFrame = ifrChamadas.getHeight();
+
+        ifrChamadas.setLocation(lDesk / 2 - lIFrame / 2, aDesk / 2 - aIFrame / 2);
+        
+        ifrChamadas.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,8 +197,10 @@ public class FrmMenu extends javax.swing.JFrame {
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     // End of variables declaration//GEN-END:variables
 }
